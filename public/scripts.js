@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const imageGrid = document.getElementById('imageGrid');
-    const baseURL = 'https://raw.githubusercontent.com/Tuber1/Photo-Site/main/public/images/';
+    const baseURL = 'httpt://tuber1.github.io/Photo-Site/images/';
 
-    fetch('/public/images')
+    fetch('/api/images')
         .then(response => response.json())
         .then(images => {
             images.forEach(filename => {
