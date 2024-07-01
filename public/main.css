@@ -10,7 +10,7 @@ body {
     font-family: 'IBM Plex Mono', sans-serif;
     display: flex;
     flex-direction: row;
-    width: 100vw;
+    width: 100svw;
     height: 100dvh;
     gap: 100px;
     margin: none;
@@ -18,7 +18,7 @@ body {
 
 aside {
     width: 300px;
-    height: 100vh;
+    height: 100dvh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -49,8 +49,8 @@ a:hover {
     /*display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 10px;*/
-    column-width: 20%;
-    padding: 10px;
+    column-count: 4;
+    gap: 20px;
 }
 
 .image-grid img {
