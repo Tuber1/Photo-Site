@@ -11,7 +11,9 @@ body {
     display: flex;
     flex-direction: row;
     width: 100vw;
-    height: 100vh
+    height: 100dvh;
+    gap: 100px;
+    margin: none;
 }
 
 aside {
@@ -44,9 +46,10 @@ a:hover {
 
 
 .image-grid {
-    display: grid;
+    /*display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 10px;
+    gap: 10px;*/
+    column-width: 20%;
     padding: 10px;
 }
 
@@ -54,6 +57,6 @@ a:hover {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 8px;
+    border-radius: 2px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
