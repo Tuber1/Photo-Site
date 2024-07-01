@@ -8,6 +8,10 @@ body {
     background-color: var(--BBDark);
     color: var(--BBText);
     font-family: 'IBM Plex Mono', sans-serif;
+    display: flex:
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh
 }
 
 aside {
@@ -20,7 +24,7 @@ aside {
 }
 
 main {
-
+    width: 100%;
 }
 
 a {
