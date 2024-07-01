@@ -8,7 +8,7 @@ body {
     background-color: var(--BBDark);
     color: var(--BBText);
     font-family: 'IBM Plex Mono', sans-serif;
-    display: flex:
+    display: flex;
     flex-direction: row;
     width: 100vw;
     height: 100vh
