@@ -4,6 +4,7 @@
     --BBCopper:#e08f59;
 }
 
+/*
 body {
     background-color: var(--BBDark);
     color: var(--BBText);
@@ -37,7 +38,18 @@ a:hover {
 #logo {
     width: 50%;
 }
+*/
 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
 
 .image-grid {
     display: grid;
