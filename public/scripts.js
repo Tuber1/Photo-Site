@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const imageGrid = document.getElementById('imageGrid');
-    const baseURL = 'https://raw.githubusercontent.com/Tuber1/Photo-Site/main/images/';
+    const baseURL = 'https://raw.githubusercontent.com/Tuber1/Photo-Site/main/public/images/';
 
     fetch('/api/images')
         .then(response => response.json())
