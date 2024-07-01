@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const IMAGE_FOLDER = path.join(__dirname, '../public/images');
+const IMAGE_FOLDER = path.join(__dirname, '../images');
 
 module.exports = (req, res) => {
     fs.readdir(IMAGE_FOLDER, (err, files) => {
