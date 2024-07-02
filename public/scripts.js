@@ -13,3 +13,15 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(error => console.error('Error loading images:', error));
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+
+    lightbox.addEventListener('click', (e) => {
+        if (e.target !== lightboxImage) {
+            lightbox.style.display = 'none';
+        }
+    });
+}
