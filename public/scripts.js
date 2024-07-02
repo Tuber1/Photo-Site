@@ -17,8 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 img.dataset.index = index;
                 img.addEventListener('click', () => {
                     currentIndex = index;
-                    lightboxImage.src = img.src;
-                    lightbox.classList.add('show');
+                    showLightbox(img.src);
                 });
                 imageGrid.appendChild(img);
             });
@@ -27,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     lightbox.addEventListener('click', (e) => {
         if (e.target !== lightboxImage) {
-            lightbox.classList.remove('show');
+            hideLightbox();
         }
     });
 
@@ -35,13 +34,28 @@ document.addEventListener('DOMContentLoaded', () => {
         if (lightbox.classList.contains('show')) {
             if (e.key === 'ArrowRight') {
                 currentIndex = (currentIndex + 1) % images.length;
-                lightboxImage.src = `${baseURL}${images[currentIndex]}`;
+                showLightbox(`${baseURL}${images[currentIndex]}`);
             } else if (e.key === 'ArrowLeft') {
                 currentIndex = (currentIndex - 1 + images.length) % images.length;
-                lightboxImage.src = `${baseURL}${images[currentIndex]}`;
+                showLightbox(`${baseURL}${images[currentIndex]}`);
             } else if (e.key === 'Escape') {
-                lightbox.classList.remove('show');
+                hideLightbox();
             }
         }
     });
+
+    function showLightbox(src) {
+        lightboxImage.src = src;
+        lightbox.classList.add('show');
+        setTimeout(() => {
+            lightbox.style.opacity = '1';
+        }, 10); // Timeout to ensure transition
+    }
+
+    function hideLightbox() {
+        lightbox.style.opacity = '0';
+        lightbox.addEventListener('transitionend', () => {
+            lightbox.classList.remove('show');
+        }, { once: true });
+    }
 });
