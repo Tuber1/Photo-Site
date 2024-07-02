@@ -71,19 +71,20 @@ a:hover {
 
 @media only screen and (min-width: 600px) and (max-width:759px) {
     .image-grid {
-        column-count: 1;
-    }
-
-    #left-side {
-        width: 200px;
+        column-count: 2;
     }
 
     body {
-        gap: 50px
+        flex-direction: column;
     }
+
+    #left-side {
+        height: 100%;
+    }
+    
 }
 
-@media only screen and (min-width: 760px) and (max-width: 939) {
+@media only screen and (min-width: 760px) and (max-width: 939px) {
     .image-grid {
         column-count: 2;
     }
