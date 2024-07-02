@@ -15,7 +15,7 @@ body {
     color: var(--BBText);
     font-family: 'IBM Plex Mono', sans-serif;
     display: flex;
-    flex-direction: row;;
+    flex-direction: row;
     gap: 100px;
     margin: 40px;
 }
@@ -54,15 +54,30 @@ a:hover {
     .image-grid {
         column-count: 1;
     }
+
+    body {
+        flex-direction: column;
+    }
+
+    #left-side {
+        height: none;
+    }
 }
 
 @media only screen and (min-width: 600px) {
+    .image-grid {
+        column-count: 1;
+    }
+}
+
+
+@media only screen and (min-width: 860px) {
     .image-grid {
         column-count: 2;
     }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1300px) {
     .image-grid {
         column-count: 3;
     }
