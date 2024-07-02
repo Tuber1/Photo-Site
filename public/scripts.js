@@ -85,12 +85,19 @@ document.addEventListener('DOMContentLoaded', () => {
             lightbox.classList.remove('swipe-left', 'swipe-right');
             void lightbox.offsetWidth; // Trigger a reflow to restart the animation
             lightbox.classList.add(swipeDirection);
+        } else {
+            lightbox.classList.remove('swipe-left', 'swipe-right');
         }
         lightboxImage.src = src;
         lightbox.classList.add('show');
         setTimeout(() => {
             lightbox.style.opacity = '1';
         }, 10); // Ensure transition is triggered
+
+        // Remove the swipe class after the animation ends to reset for the next swipe
+        lightbox.addEventListener('animationend', () => {
+            lightbox.classList.remove('swipe-left', 'swipe-right');
+        }, { once: true });
     }
 
     function hideLightbox() {
