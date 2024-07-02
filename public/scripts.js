@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const imageGrid = document.getElementById('imageGrid');
-    const baseURL = 'https://raw.githubusercontent.com/Tuber1/Photo-Site/main/public/images/'; 
+    const baseURL = 'https://tuber1.github.io/my-image-gallery/images/';
     const lightbox = document.getElementById('lightbox');
     const lightboxImage = document.getElementById('lightboxImage');
     let images = [];
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 img.addEventListener('click', () => {
                     currentIndex = index;
                     lightboxImage.src = img.src;
-                    lightbox.style.display = 'flex';
+                    lightbox.classList.add('show');
                 });
                 imageGrid.appendChild(img);
             });
@@ -27,12 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     lightbox.addEventListener('click', (e) => {
         if (e.target !== lightboxImage) {
-            lightbox.style.display = 'none';
+            lightbox.classList.remove('show');
         }
     });
 
     document.addEventListener('keydown', (e) => {
-        if (lightbox.style.display === 'flex') {
+        if (lightbox.classList.contains('show')) {
             if (e.key === 'ArrowRight') {
                 currentIndex = (currentIndex + 1) % images.length;
                 lightboxImage.src = `${baseURL}${images[currentIndex]}`;
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentIndex = (currentIndex - 1 + images.length) % images.length;
                 lightboxImage.src = `${baseURL}${images[currentIndex]}`;
             } else if (e.key === 'Escape') {
-                lightbox.style.display = 'none';
+                lightbox.classList.remove('show');
             }
         }
     });
