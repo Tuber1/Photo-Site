@@ -55,31 +55,6 @@ a:hover {
     column-count: 1;
 }
 
-@media only screen and (min-width: 600px) {
-    .image-grid {
-        column-count: 1;
-    }
-}
-
-
-@media only screen and (min-width: 860px) {
-    .image-grid {
-        column-count: 2;
-    }
-}
-
-@media only screen and (min-width: 1300px) {
-    .image-grid {
-        column-count: 3;
-    }
-}
-
-@media only screen and (min-width: 2000px) {
-    .image-grid {
-        column-count: 4;
-    }
-}
-
 @media only screen and (max-width: 600px) {
     .image-grid {
         column-count: 1;
@@ -90,11 +65,34 @@ a:hover {
     }
 
     #left-side {
-        height: none;
+        height: 100%;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width:859px) {
+    .image-grid {
+        column-count: 1;
     }
 }
 
 
+@media only screen and (min-width: 860px) and (max-width:1299px) {
+    .image-grid {
+        column-count: 2;
+    }
+}
+
+@media only screen and (min-width: 1300px) and (max-width: 1999px) {
+    .image-grid {
+        column-count: 3;
+    }
+}
+
+@media only screen and (min-width: 2000px) {
+    .image-grid {
+        column-count: 4;
+    }
+}
 
 .image-grid img {
     width: 100%;
