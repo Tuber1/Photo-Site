@@ -86,7 +86,7 @@ a:hover {
     
 }
 
-@media only screen and (min-width: 760px) and (max-width: 939px) {
+@media only screen and (min-width: 760px) and (max-width: 999px) {
     .image-grid {
         column-count: 2;
     }
@@ -101,7 +101,7 @@ a:hover {
 }
 
 
-@media only screen and (min-width: 940px) {
+@media only screen and (min-width: 1000px) {
     .image-grid {
         column-count: 2;
     }
