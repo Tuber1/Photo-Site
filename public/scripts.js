@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 img.src = `${baseURL}${filename}`;
                 img.alt = filename;
                 img.dataset.index = index;
+                img.loading = 'lazy';
                 img.addEventListener('click', () => {
                     currentIndex = index;
                     showLightbox(img.src);
