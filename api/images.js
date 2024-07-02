@@ -8,7 +8,7 @@ module.exports = (req, res) => {
         if (err) {
             return res.status(500).json({ error: 'Unable to scan directory' });
         }
-        const images = files.filter(file => /\.(jpg|jpeg|png|gif)$/.test(file));
+        const images = files.filter(file => /\.(webp|jpg|jpeg|png|gif)$/.test(file));
         res.json(images);
     });
 };
