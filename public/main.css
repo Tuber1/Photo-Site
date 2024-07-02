@@ -9,24 +9,22 @@ body {
     color: var(--BBText);
     font-family: 'IBM Plex Mono', sans-serif;
     display: flex;
-    flex-direction: row;
-    width: 100svw;
-    height: 100dvh;
+    flex-direction: row;;
     gap: 100px;
-    margin: none;
+    margin: 40px;
 }
 
 aside {
     width: 300px;
-    height: 100dvh;
+    height: calc(100dvh - 90px);
     display: flex;
-    flex-direction: column;
+    flex-direction:column;
     justify-content: space-between;
-    padding: 40px;
 }
 
 main {
     width: 100%;
+
 }
 
 a {
@@ -45,10 +43,8 @@ a:hover {
 }
 
 
+
 .image-grid {
-    /*display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 10px;*/
     column-count: 4;
     gap: 20px;
 }
@@ -58,5 +54,5 @@ a:hover {
     height: auto;
     display: block;
     border-radius: 2px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
