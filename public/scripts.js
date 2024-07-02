@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const lightboxImage = document.getElementById('lightboxImage');
     let images = [];
     let currentIndex = 0;
+    let startX = 0;
+    let endX = 0;
 
     fetch('/api/images')
         .then(response => response.json())
@@ -43,6 +45,36 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+
+    lightbox.addEventListener('touchstart', handleTouchStart, false);
+    lightbox.addEventListener('touchmove', handleTouchMove, false);
+
+    function handleTouchStart(e) {
+        startX = e.touches[0].clientX;
+    }
+
+    function handleTouchMove(e) {
+        if (!startX) {
+            return;
+        }
+
+        endX = e.touches[0].clientX;
+
+        const diffX = startX - endX;
+
+        if (Math.abs(diffX) > 50) { // Minimum threshold for swipe
+            if (diffX > 0) {
+                // Swipe left
+                currentIndex = (currentIndex + 1) % images.length;
+            } else {
+                // Swipe right
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+            }
+            showLightbox(`${baseURL}${images[currentIndex]}`);
+            startX = 0;
+            endX = 0;
+        }
+    }
 
     function showLightbox(src) {
         lightboxImage.src = src;
