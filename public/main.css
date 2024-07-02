@@ -4,6 +4,11 @@
     --BBCopper:#e08f59;
 }
 
+html {
+    scrollbar-color: dark;
+    scrollbar-width: 100px;
+}
+
 body {
     background-color: var(--BBDark);
     color: var(--BBText);
@@ -15,6 +20,10 @@ body {
 }
 
 aside {
+    display: fixed;
+}
+
+#left-side {
     width: 300px;
     height: calc(100dvh - 90px);
     display: flex;
@@ -92,12 +101,14 @@ a:hover {
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .lightbox img {
     max-width: 90%;
     max-height: 90%;
     border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
 }
 
 .lightbox:target {
