@@ -69,7 +69,7 @@ a:hover {
     }
 }
 
-@media only screen and (min-width: 600px) and (max-width:899px) {
+@media only screen and (min-width: 600px) and (max-width:759px) {
     .image-grid {
         column-count: 1;
     }
@@ -83,8 +83,22 @@ a:hover {
     }
 }
 
+@media only screen and (min-width: 760px) and (max-width: 939) {
+    .image-grid {
+        column-count: 2;
+    }
 
-@media only screen and (min-width: 900px) {
+    #left-side {
+        width: 200px;
+    }
+
+    body {
+        gap: 50px
+    }
+}
+
+
+@media only screen and (min-width: 940px) {
     .image-grid {
         column-count: 2;
     }
