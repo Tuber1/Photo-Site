@@ -15,7 +15,7 @@
 body {
     background-color: var(--BBDark);
     color: var(--BBText);
-    font-family: 'IBM Plex Mono', sans-serif;
+    font-family: "IBM Plex Mono", sans-serif;
     display: flex;
     flex-direction: row;
     gap: 100px;
@@ -166,4 +166,34 @@ a:hover {
 
 .hidden {
     display: none;
+}
+
+.lightbox.swipe-left {
+    animation: swipe-left 0.5s forwards;
+}
+
+.lightbox.swipe-right {
+    animation: swipe-right 0.5s forwards;
+}
+
+@keyframes swipe-left {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+@keyframes swipe-right {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
 }

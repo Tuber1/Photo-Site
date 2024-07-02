@@ -36,10 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (lightbox.classList.contains('show')) {
             if (e.key === 'ArrowRight') {
                 currentIndex = (currentIndex + 1) % images.length;
-                showLightbox(`${baseURL}${images[currentIndex]}`);
+                showLightbox(`${baseURL}${images[currentIndex]}`, 'swipe-left');
             } else if (e.key === 'ArrowLeft') {
                 currentIndex = (currentIndex - 1 + images.length) % images.length;
-                showLightbox(`${baseURL}${images[currentIndex]}`);
+                showLightbox(`${baseURL}${images[currentIndex]}`, 'swipe-right');
             } else if (e.key === 'Escape') {
                 hideLightbox();
             }
@@ -66,17 +66,23 @@ document.addEventListener('DOMContentLoaded', () => {
             if (diffX > 0) {
                 // Swipe left
                 currentIndex = (currentIndex + 1) % images.length;
+                showLightbox(`${baseURL}${images[currentIndex]}`, 'swipe-left');
             } else {
                 // Swipe right
                 currentIndex = (currentIndex - 1 + images.length) % images.length;
+                showLightbox(`${baseURL}${images[currentIndex]}`, 'swipe-right');
             }
-            showLightbox(`${baseURL}${images[currentIndex]}`);
             startX = 0;
             endX = 0;
         }
     }
 
-    function showLightbox(src) {
+    function showLightbox(src, swipeDirection) {
+        if (swipeDirection) {
+            lightbox.classList.remove('swipe-left', 'swipe-right');
+            void lightbox.offsetWidth; // Trigger a reflow to restart the animation
+            lightbox.classList.add(swipeDirection);
+        }
         lightboxImage.src = src;
         lightbox.classList.add('show');
         setTimeout(() => {
