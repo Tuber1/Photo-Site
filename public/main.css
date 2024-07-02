@@ -21,7 +21,7 @@ body {
 }
 
 #left-side {
-    width: 300px;
+    width: 310px;
     height: calc(100dvh - 90px);
     display: flex;
     flex-direction:column;
@@ -53,6 +53,7 @@ a:hover {
 
 .image-grid {
     column-count: 1;
+    gap: 20px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -80,6 +81,7 @@ a:hover {
 
     #left-side {
         height: 100%;
+        width: 500px;
     }
     
 }
@@ -90,7 +92,7 @@ a:hover {
     }
 
     #left-side {
-        width: 200px;
+        width: 230px;
     }
 
     body {
