@@ -37,10 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (lightbox.classList.contains('show')) {
             if (e.key === 'ArrowRight') {
                 currentIndex = (currentIndex + 1) % images.length;
-                showLightbox(`${baseURL}${images[currentIndex]}`, isMobile ? 'swipe-left' : null);
+                showLightbox(`${baseURL}${images[currentIndex]}`);
             } else if (e.key === 'ArrowLeft') {
                 currentIndex = (currentIndex - 1 + images.length) % images.length;
-                showLightbox(`${baseURL}${images[currentIndex]}`, isMobile ? 'swipe-right' : null);
+                showLightbox(`${baseURL}${images[currentIndex]}`);
             } else if (e.key === 'Escape') {
                 hideLightbox();
             }
@@ -69,35 +69,23 @@ document.addEventListener('DOMContentLoaded', () => {
             if (diffX > 0) {
                 // Swipe left
                 currentIndex = (currentIndex + 1) % images.length;
-                showLightbox(`${baseURL}${images[currentIndex]}`, 'swipe-left');
+                showLightbox(`${baseURL}${images[currentIndex]}`);
             } else {
                 // Swipe right
                 currentIndex = (currentIndex - 1 + images.length) % images.length;
-                showLightbox(`${baseURL}${images[currentIndex]}`, 'swipe-right');
+                showLightbox(`${baseURL}${images[currentIndex]}`);
             }
             startX = 0;
             endX = 0;
         }
     }
 
-    function showLightbox(src, swipeDirection) {
-        if (swipeDirection) {
-            lightbox.classList.remove('swipe-left', 'swipe-right');
-            void lightbox.offsetWidth; // Trigger a reflow to restart the animation
-            lightbox.classList.add(swipeDirection);
-        } else {
-            lightbox.classList.remove('swipe-left', 'swipe-right');
-        }
+    function showLightbox(src) {
         lightboxImage.src = src;
         lightbox.classList.add('show');
         setTimeout(() => {
             lightbox.style.opacity = '1';
         }, 10); // Ensure transition is triggered
-
-        // Remove the swipe class after the animation ends to reset for the next swipe
-        lightbox.addEventListener('animationend', () => {
-            lightbox.classList.remove('swipe-left', 'swipe-right');
-        }, { once: true });
     }
 
     function hideLightbox() {
