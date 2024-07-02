@@ -50,18 +50,9 @@ a:hover {
     width: 50%;
 }
 
-@media only screen and (max-width: 600px) {
-    .image-grid {
-        column-count: 1;
-    }
 
-    body {
-        flex-direction: column;
-    }
-
-    #left-side {
-        height: none;
-    }
+.image-grid {
+    column-count: 1;
 }
 
 @media only screen and (min-width: 600px) {
@@ -89,9 +80,21 @@ a:hover {
     }
 }
 
-.image-grid {
-    gap: 20px;
+@media only screen and (max-width: 600px) {
+    .image-grid {
+        column-count: 1;
+    }
+
+    body {
+        flex-direction: column;
+    }
+
+    #left-side {
+        height: none;
+    }
 }
+
+
 
 .image-grid img {
     width: 100%;
