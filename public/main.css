@@ -10,7 +10,7 @@
 
 ::-webkit-scrollbar-corner {background-color: #e08f59;}
 
-@import url(//fonts.googleapis.com/css?family=ibmplexmono);
+/*@import url("//fonts.googleapis.com/css?family=ibmplexmono");*/
 
 body {
     background-color: var(--BBDark);
@@ -88,7 +88,7 @@ a:hover {
     
 }
 
-@media only screen and (min-width: 760px) and (max-width: 999px) {
+@media only screen and (min-width: 768px) and (max-width: 999px) {
     .image-grid {
         column-count: 2;
     }
@@ -164,16 +164,16 @@ a:hover {
     opacity: 1;
 }
 
-.hidden {
-    display: none;
-}
+/*Swiping Animation*/
 
-.lightbox.swipe-left {
-    animation: swipe-left 0.5s forwards;
-}
+@media (max-width: 768px) {
+    .lightbox.swipe-left {
+        animation: swipe-left 0.5s forwards;
+    }
 
-.lightbox.swipe-right {
-    animation: swipe-right 0.5s forwards;
+    .lightbox.swipe-right {
+        animation: swipe-right 0.5s forwards;
+    }
 }
 
 @keyframes swipe-left {

@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentIndex = 0;
     let startX = 0;
     let endX = 0;
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
     fetch('/api/images')
         .then(response => response.json())
@@ -36,18 +37,20 @@ document.addEventListener('DOMContentLoaded', () => {
         if (lightbox.classList.contains('show')) {
             if (e.key === 'ArrowRight') {
                 currentIndex = (currentIndex + 1) % images.length;
-                showLightbox(`${baseURL}${images[currentIndex]}`, 'swipe-left');
+                showLightbox(`${baseURL}${images[currentIndex]}`, isMobile ? 'swipe-left' : null);
             } else if (e.key === 'ArrowLeft') {
                 currentIndex = (currentIndex - 1 + images.length) % images.length;
-                showLightbox(`${baseURL}${images[currentIndex]}`, 'swipe-right');
+                showLightbox(`${baseURL}${images[currentIndex]}`, isMobile ? 'swipe-right' : null);
             } else if (e.key === 'Escape') {
                 hideLightbox();
             }
         }
     });
 
-    lightbox.addEventListener('touchstart', handleTouchStart, false);
-    lightbox.addEventListener('touchmove', handleTouchMove, false);
+    if (isMobile) {
+        lightbox.addEventListener('touchstart', handleTouchStart, false);
+        lightbox.addEventListener('touchmove', handleTouchMove, false);
+    }
 
     function handleTouchStart(e) {
         startX = e.touches[0].clientX;
