@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         lightbox.classList.add('show');
         setTimeout(() => {
             lightbox.style.opacity = '1';
-        }, 10); // Timeout to ensure transition
+        }, 10); // Ensure transition is triggered
     }
 
     function hideLightbox() {
